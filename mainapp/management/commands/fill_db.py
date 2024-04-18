@@ -1,4 +1,4 @@
-from mainapp.models import Category, Course, Lesson, Schedule
+from mainapp.models import CategoryCourse, Course, Lesson, Schedule
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 
@@ -11,7 +11,7 @@ class Command(BaseCommand):
         Schedule.objects.all().delete()
         Lesson.objects.all().delete()
         Course.objects.all().delete()
-        Category.objects.all().delete()
+        CategoryCourse.objects.all().delete()
 
         print('Create_superuser...')
         User = get_user_model()
@@ -19,8 +19,8 @@ class Command(BaseCommand):
         admin.save()
 
         print('Create categories...')
-        category_1 = Category.objects.create(name='Development', description='For developers')
-        category_2 = Category.objects.create(name='Software tester', description='For QA')
+        category_1 = CategoryCourse.objects.create(name='Development', description='For developers')
+        category_2 = CategoryCourse.objects.create(name='Software tester', description='For QA')
 
         print('Create courses...')
         course_1 = Course.objects.create(name='Django developer', description='You will good django developer',

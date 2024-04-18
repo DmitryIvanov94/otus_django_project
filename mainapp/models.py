@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-class Category(models.Model):
+class CategoryCourse(models.Model):
     name = models.CharField(max_length=64, unique=True, null=False)
     description = models.TextField(max_length=1024, unique=False, null=True)
 
@@ -13,7 +13,7 @@ class Category(models.Model):
 class Course(models.Model):
     name = models.CharField(max_length=64)
     description = models.TextField(max_length=64, null=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(CategoryCourse, on_delete=models.CASCADE)
     teachers = models.ManyToManyField(User)
 
     def __str__(self):
