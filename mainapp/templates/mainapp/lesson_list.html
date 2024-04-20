@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-    Уроки
+    Lessons
 {% endblock %}
 
 {% block body %}
@@ -10,12 +10,11 @@
   {% for lesson in lesson_list %}
           <div class="col">
             <div class="card h-100">
-              <div class="card-header">Хедер</div>
+              <div class="card-header">Lesson</div>
               <img src="..." class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">{{lesson.name}}</h5>
-                <p class="card-text">Это более длинная карта С вспомогательным текстом ниже в качестве естественного перехода к
-                  дополнительному контенту. Этот контент немного длиннее.</p>
+                <p class="card-text">LessonName</p>
               </div>
             </div>
           </div>
